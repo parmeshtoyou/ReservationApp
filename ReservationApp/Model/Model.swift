@@ -25,7 +25,10 @@ import SwiftUI
             Restaurant(id: UUID(), city: "San Francisco", neighborhood: "Union Square", phoneNumber: "(415) 555-9813")
         ]
         //initialise with empty list
-        reservations = []
+        
+        reservations = [
+            Reservation(id: UUID(), restaurant: Restaurant(id: UUID(), city: "Las Vegas", neighborhood: "Downtown", phoneNumber: "(702) 555-9898"), party: 1, dateAndTime: Date(), name: "Parmesh", phone: "1234456", email: "email@gmail.com", specialRequest: "chilled")
+        ]
     }
     
     @Published var restaurants = [

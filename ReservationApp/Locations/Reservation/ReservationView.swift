@@ -12,11 +12,39 @@ struct ReservationView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text(model.reservations.isEmpty ? "No Reservation Yet" : "\(model.reservations.count) Reservation Available")
-            List {
-                ForEach(model.reservations) { reservation in
-                    Text(reservation.name)
+            if(model.reservations.isEmpty) {
+                HStack {
+                    Text("No Reservation Yet")
+                        .padding(.top, 50)
                 }
+            } else {
+                let reservation = model.reservations.first
+                
+                VStack(alignment: .leading) {
+                    Text("RESTAURANT")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.bottom, 15)
+                    RestaurantView(restaurant: model.restaurants.first!).frame(alignment: .leading)
+                        .padding(.bottom, 20)
+                    
+                    Divider().padding(.bottom, 20)
+                    
+                    HStack {
+                        Text("NAME:").fontWeight(.medium).foregroundColor(.gray.opacity(0.7))
+                        Text(reservation?.name ?? "").fontWeight(.regular)
+                    }
+                    HStack {
+                        Text("E-MAIL:").fontWeight(.medium).foregroundColor(.gray.opacity(0.7))
+                        Text(reservation?.email ?? "").fontWeight(.regular)
+                    }
+                    HStack {
+                        Text("PHONE:").fontWeight(.medium).foregroundColor(.gray.opacity(0.7))
+                        Text(reservation?.phone ?? "").fontWeight(.regular)
+                    }
+                    
+                    
+                    
+                }.frame(maxWidth: .infinity).padding(20)
             }
             Spacer()
         }.onAppear {

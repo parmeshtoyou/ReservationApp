@@ -9,7 +9,6 @@ import SwiftUI
 
 struct MainView: View {
     @StateObject var model = Model()
-    @State var currentIndex = 0
     
     var body: some View {
         VStack {
@@ -23,7 +22,7 @@ struct MainView: View {
                 .background(Color.gray.opacity(0.2))
                 .cornerRadius(20)
             
-            TabView(selection: $currentIndex) {
+            TabView {
                 LocationsView()
                     .tag(0)
                     .tabItem {

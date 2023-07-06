@@ -13,6 +13,7 @@ import SwiftUI
     @Published var displayingReservationForm: Bool = false
     @Published var tabViewSelectedIndex: Int = 0
     @Published var restaurantsList: [Restaurant]
+    @Published var reservations: [Reservation]
     
     init() {
         restaurantsList = [
@@ -23,6 +24,8 @@ import SwiftUI
             Restaurant(id: UUID(), city: "San Francisco", neighborhood: "North Beach", phoneNumber: "(415) 555-1345"),
             Restaurant(id: UUID(), city: "San Francisco", neighborhood: "Union Square", phoneNumber: "(415) 555-9813")
         ]
+        //initialise with empty list
+        reservations = []
     }
     
     @Published var restaurants = [
@@ -47,4 +50,14 @@ class Restaurant: Identifiable, Codable {
         self.neighborhood = neighborhood
         self.phoneNumber = phoneNumber
     }
+}
+
+struct Reservation {
+    var restaurant: Restaurant
+    var party: Int
+    var dateAndTime: Date
+    var name: String
+    var phone: String
+    var email: String
+    var specialRequest: String
 }

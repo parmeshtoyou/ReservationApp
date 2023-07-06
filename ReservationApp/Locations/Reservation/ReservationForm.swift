@@ -4,7 +4,6 @@
 //
 //  Created by Parmesh Mahore on 05/07/23.
 //
-
 import SwiftUI
 
 struct ReservationForm: View {
@@ -76,32 +75,22 @@ struct ReservationForm: View {
                 
                 Button {
                     isValidationFailed = !validationFormV2()
-//                    switch errorType {
-//                        case .PeopleCannotBeZero:
-//                            errorMessage = "People count cannot be Zero"
-//                            isValidationFailed = true
-//                        case .NameIsEmpty:
-//                            errorMessage = "Name is Empty"
-//                            isValidationFailed = true
-//                        case .NameIsVerySmall:
-//                            errorMessage = "Name must have at least 3 characters"
-//                            isValidationFailed = true
-//                        case .NameContainsSpecialCharacter:
-//                            errorMessage = "Name can only contain letters"
-//                            isValidationFailed = true
-//                        case .PhoneNumberEmpty:
-//                            errorMessage = "Phone number is Empty"
-//                            isValidationFailed = true
-//                        case .EmailIsEmpty:
-//                            errorMessage = "Email is Empty"
-//                            isValidationFailed = true
-//                        case .InvalidEmailFormat:
-//                            errorMessage = "Invalid Email Format"
-//                            isValidationFailed = true
-//                        case .Success:
-//                            isValidationFailed = false
-//                    }
-
+                    if isValidationFailed == false {
+                        model.reservations.append(
+                            Reservation(
+                                restaurant: restaurant,
+                                party: party,
+                                dateAndTime: selectedDate,
+                                name: name,
+                                phone: phone,
+                                email: email,
+                                specialRequest: anySpecialRequest)
+                        )
+//                        model.tabViewSelectedIndex = 1
+//                        model.displayingReservationForm = false
+                        presentationMode.wrappedValue.dismiss()
+                    }
+                    
                 } label: {
                     Text("CONFIRM RESERVATION").foregroundColor(.white).padding(10)
                 }

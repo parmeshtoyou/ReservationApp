@@ -8,17 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		1EAEE1BB2A5336FC004D253F /* ReservationAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAEE1BA2A5336FC004D253F /* ReservationAppApp.swift */; };
-		1EAEE1BD2A5336FC004D253F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAEE1BC2A5336FC004D253F /* ContentView.swift */; };
 		1EAEE1BF2A5336FE004D253F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EAEE1BE2A5336FE004D253F /* Assets.xcassets */; };
 		1EAEE1C22A5336FE004D253F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EAEE1C12A5336FE004D253F /* Preview Assets.xcassets */; };
+		1EAEE1C92A533987004D253F /* LittleLemonLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAEE1C82A533987004D253F /* LittleLemonLogo.swift */; };
+		1EAEE1CB2A53D62C004D253F /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAEE1CA2A53D62C004D253F /* LocationView.swift */; };
+		1EAEE1D42A54122B004D253F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAEE1D32A54122B004D253F /* MainView.swift */; };
+		1EAEE1D62A5412E8004D253F /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAEE1D52A5412E8004D253F /* Model.swift */; };
+		1EAEE1D82A550B16004D253F /* ReservationForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAEE1D72A550B16004D253F /* ReservationForm.swift */; };
+		1EAEE1DA2A550B7E004D253F /* RestaurantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAEE1D92A550B7E004D253F /* RestaurantView.swift */; };
+		1EAEE1DC2A551C5D004D253F /* ReservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAEE1DB2A551C5D004D253F /* ReservationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1EAEE1B72A5336FC004D253F /* ReservationApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReservationApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EAEE1BA2A5336FC004D253F /* ReservationAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationAppApp.swift; sourceTree = "<group>"; };
-		1EAEE1BC2A5336FC004D253F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1EAEE1BE2A5336FE004D253F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1EAEE1C12A5336FE004D253F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1EAEE1C82A533987004D253F /* LittleLemonLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LittleLemonLogo.swift; sourceTree = "<group>"; };
+		1EAEE1CA2A53D62C004D253F /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
+		1EAEE1D32A54122B004D253F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		1EAEE1D52A5412E8004D253F /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		1EAEE1D72A550B16004D253F /* ReservationForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationForm.swift; sourceTree = "<group>"; };
+		1EAEE1D92A550B7E004D253F /* RestaurantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantView.swift; sourceTree = "<group>"; };
+		1EAEE1DB2A551C5D004D253F /* ReservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +63,11 @@
 		1EAEE1B92A5336FC004D253F /* ReservationApp */ = {
 			isa = PBXGroup;
 			children = (
+				1EAEE1DE2A551D20004D253F /* Views */,
+				1EAEE1DD2A551CF9004D253F /* Locations */,
+				1EAEE1D02A53DD5A004D253F /* Model */,
 				1EAEE1BA2A5336FC004D253F /* ReservationAppApp.swift */,
-				1EAEE1BC2A5336FC004D253F /* ContentView.swift */,
+				1EAEE1D32A54122B004D253F /* MainView.swift */,
 				1EAEE1BE2A5336FE004D253F /* Assets.xcassets */,
 				1EAEE1C02A5336FE004D253F /* Preview Content */,
 			);
@@ -65,6 +80,41 @@
 				1EAEE1C12A5336FE004D253F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1EAEE1CD2A53D693004D253F /* Reservation */ = {
+			isa = PBXGroup;
+			children = (
+				1EAEE1D72A550B16004D253F /* ReservationForm.swift */,
+				1EAEE1DB2A551C5D004D253F /* ReservationView.swift */,
+			);
+			path = Reservation;
+			sourceTree = "<group>";
+		};
+		1EAEE1D02A53DD5A004D253F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1EAEE1D52A5412E8004D253F /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1EAEE1DD2A551CF9004D253F /* Locations */ = {
+			isa = PBXGroup;
+			children = (
+				1EAEE1D92A550B7E004D253F /* RestaurantView.swift */,
+				1EAEE1CA2A53D62C004D253F /* LocationView.swift */,
+				1EAEE1CD2A53D693004D253F /* Reservation */,
+			);
+			path = Locations;
+			sourceTree = "<group>";
+		};
+		1EAEE1DE2A551D20004D253F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1EAEE1C82A533987004D253F /* LittleLemonLogo.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +187,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1EAEE1BD2A5336FC004D253F /* ContentView.swift in Sources */,
+				1EAEE1D42A54122B004D253F /* MainView.swift in Sources */,
+				1EAEE1DC2A551C5D004D253F /* ReservationView.swift in Sources */,
+				1EAEE1CB2A53D62C004D253F /* LocationView.swift in Sources */,
+				1EAEE1DA2A550B7E004D253F /* RestaurantView.swift in Sources */,
+				1EAEE1D82A550B16004D253F /* ReservationForm.swift in Sources */,
+				1EAEE1C92A533987004D253F /* LittleLemonLogo.swift in Sources */,
 				1EAEE1BB2A5336FC004D253F /* ReservationAppApp.swift in Sources */,
+				1EAEE1D62A5412E8004D253F /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

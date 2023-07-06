@@ -13,9 +13,10 @@ struct MainView: View {
     var body: some View {
         VStack {
             LittleLemonLogo()
-                .padding(.top, 50)
+                .padding([.leading, .trailing], 30)
+                .padding([.top], 50)
             
-            Text(model.displayingReservationForm ? "Reservation Details" : "Select a location")
+            Text(getTitle())
                 .padding([.leading, .trailing], 40)
                 .padding([.top, .bottom], 8)
                 .background(Color.gray.opacity(0.2))
@@ -44,6 +45,16 @@ struct MainView: View {
             }
             .environmentObject(model)
         }
+    }
+    
+    func getTitle() -> String {
+        var title = ""
+        if model.tabViewSelectedIndex == 0 {
+            title = model.displayingReservationForm ? "Reservation Details" : "Select a location"
+        } else {
+            title = "RESERVATION"
+        }
+        return title
     }
 }
 

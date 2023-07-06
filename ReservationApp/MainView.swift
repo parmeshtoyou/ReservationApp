@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MainView: View {
     @StateObject var model = Model()
+    @State var currentIndex = 0
     
     var body: some View {
         VStack {
@@ -16,14 +17,13 @@ struct MainView: View {
                 .padding([.leading, .trailing], 30)
                 .padding([.top], 50)
             
-            Text(getTitle())
+            Text(model.title)
                 .padding([.leading, .trailing], 40)
                 .padding([.top, .bottom], 8)
                 .background(Color.gray.opacity(0.2))
                 .cornerRadius(20)
             
-            //internally TabView will take care of updating this selected index
-            TabView(selection: $model.tabViewSelectedIndex) {
+            TabView(selection: $currentIndex) {
                 LocationsView()
                     .tag(0)
                     .tabItem {
@@ -47,15 +47,15 @@ struct MainView: View {
         }
     }
     
-    func getTitle() -> String {
-        var title = ""
-        if model.tabViewSelectedIndex == 0 {
-            title = model.displayingReservationForm ? "Reservation Details" : "Select a location"
-        } else {
-            title = "RESERVATION"
-        }
-        return title
-    }
+//    func getTitle() -> String {
+//        var title = "Select a location"
+//        if model.displayingReservationForm {
+//            title = model.displayingReservationForm ? "Reservation Details" : "Select a location"
+//        } else {
+//            title = "RESERVATION"
+//        }
+//        return title
+//    }
 }
 
 struct MainView_Previews: PreviewProvider {

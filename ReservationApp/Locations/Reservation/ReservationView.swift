@@ -11,16 +11,16 @@ struct ReservationView: View {
     @EnvironmentObject var model: Model
     
     var body: some View {
-        Text(model.reservations.isEmpty ? "No Reservation Yet" : "\(model.reservations.count) Reservation Available")
-        if(!model.reservations.isEmpty) {
-            let reservation = model.reservations.first
-            
-            VStack {
-                Text("RESTAURANT")
-                Text(reservation?.restaurant.city ?? "")
-                Text("\(reservation?.restaurant.neighborhood ?? "") - \(reservation?.restaurant.phoneNumber ?? "")")
-                
+        VStack(alignment: .leading) {
+            Text(model.reservations.isEmpty ? "No Reservation Yet" : "\(model.reservations.count) Reservation Available")
+            List {
+                ForEach(model.reservations) { reservation in
+                    Text(reservation.name)
+                }
             }
+            Spacer()
+        }.onAppear {
+            model.title = "RESERVATION"
         }
     }
 }

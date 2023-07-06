@@ -24,6 +24,9 @@ struct LocationsView: View {
                     }
                 }
                 .listStyle(.plain)
+                .onAppear {
+                    model.title = "Select a location"
+                }
             }
         }
     }

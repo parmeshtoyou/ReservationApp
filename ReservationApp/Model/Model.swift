@@ -11,9 +11,9 @@ import SwiftUI
 
 @MainActor class Model: ObservableObject {
     @Published var displayingReservationForm: Bool = false
-    @Published var tabViewSelectedIndex: Int = 0
+    @Published var title: String = "Select a location"
     @Published var restaurantsList: [Restaurant]
-    @Published var reservations: [Reservation]
+    var reservations: [Reservation]
     
     init() {
         restaurantsList = [
@@ -52,7 +52,8 @@ class Restaurant: Identifiable, Codable {
     }
 }
 
-struct Reservation {
+class Reservation: Identifiable {
+    var id: UUID
     var restaurant: Restaurant
     var party: Int
     var dateAndTime: Date
@@ -60,4 +61,23 @@ struct Reservation {
     var phone: String
     var email: String
     var specialRequest: String
+    
+    init(id: UUID,
+         restaurant: Restaurant,
+         party: Int,
+         dateAndTime: Date,
+         name: String,
+         phone: String,
+         email: String,
+         specialRequest: String) {
+        
+        self.id = id
+        self.restaurant = restaurant
+        self.party = party
+        self.dateAndTime = dateAndTime
+        self.name = name
+        self.phone = phone
+        self.email = email
+        self.specialRequest = specialRequest
+    }
 }

@@ -78,6 +78,7 @@ struct ReservationForm: View {
                     if isValidationFailed == false {
                         model.reservations.append(
                             Reservation(
+                                id: UUID(),
                                 restaurant: restaurant,
                                 party: party,
                                 dateAndTime: selectedDate,
@@ -86,8 +87,6 @@ struct ReservationForm: View {
                                 email: email,
                                 specialRequest: anySpecialRequest)
                         )
-//                        model.tabViewSelectedIndex = 1
-//                        model.displayingReservationForm = false
                         presentationMode.wrappedValue.dismiss()
                     }
                     
@@ -104,6 +103,7 @@ struct ReservationForm: View {
         .padding(EdgeInsets(top: -50, leading: 20, bottom: 0, trailing: 20))
         .onAppear {
             model.displayingReservationForm = true
+            model.title = "Reservation Details"
         }
         .onDisappear {
             model.displayingReservationForm = false
